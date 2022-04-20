@@ -1,0 +1,18 @@
+splunk_instances:
+  default:
+    hec_endpoint: /services/collector
+    hec_port: 8088
+    host: 10.122.65.115
+    password: 1234qwer
+    port: 8089
+    scheme: https
+    username: admin
+    verify: false
+  prod:
+    hec_endpoint: /services/collector
+    hec_port: 8088
+    host: 10.99.80.85
+    port: 8089
+    scheme: https
+    splunkToken: eyJraWQiOiJzcGx1bmsuc2VjcmV0IiwiYWxnIjoiSFM1MTIiLCJ2ZXIiOiJ2MiIsInR0eXAiOiJzdGF0aWMifQ.eyJpc3MiOiJzaGFuZ25hbjFAbGVub3ZvLmNvbSBmcm9tIHNscDI5Z3h6ZzBmIiwic3ViIjoic3lzX3l1eWwxIiwiYXVkIjoiYXBpIHJlcXVlc3QgZm9yIHl1eWwxIiwiaWRwIjoiU3BsdW5rIiwianRpIjoiNTgwYmU3Y2Q4ZTNiNDgwZTk0YmUzZmRkNjY3MjAwZWM1MmI1MjFkNDhmNzE2ZjI1OGRmOTU4MmYzNGM1ZjI5OCIsImlhdCI6MTY0NzkyOTUzMywiZXhwIjo0MDc3ODc4MzQwLCJuYnIiOjE2NDc5Mjk1MzN9.OgdnJbzzqW1RI6BXv-7mT4Jm9YTWmPz6lb9FKWPBvHodKQI_AS3WDDZUgw3Ld73zML09MqorgsOuNUU-m7jMWQ
+    verify: false

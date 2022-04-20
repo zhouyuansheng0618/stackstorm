@@ -85,7 +85,10 @@ class CorsMiddleware(object):
                 REQUEST_ID_HEADER,
             ]
 
-            headers["Access-Control-Allow-Origin"] = origin_allowed
+#            headers["Access-Control-Allow-Origin"] = origin_allowed  Location  Status Code
+            
+            
+            headers["Access-Control-Allow-Origin"] = "http://127.0.0.1:3000"
             headers["Access-Control-Allow-Methods"] = ",".join(methods_allowed)
             headers["Access-Control-Allow-Headers"] = ",".join(request_headers_allowed)
             headers["Access-Control-Allow-Credentials"] = "true"

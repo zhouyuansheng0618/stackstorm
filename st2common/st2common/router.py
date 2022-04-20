@@ -43,6 +43,7 @@ from st2common.util.jsonify import json_decode
 from st2common.util.jsonify import get_json_type_for_python_value
 from st2common.util.http import parse_content_type_header
 from st2common.util.deep_copy import fast_deepcopy_dict
+from st2common.models.db.auth import UserDB
 
 __all__ = [
     "Router",
@@ -207,6 +208,7 @@ class Response(webob.Response):
         return json_decode(self.body.decode(self.charset or "utf-8"))
 
     def _json_body__set(self, value):
+        
         self.body = json_encode(value).encode("utf-8")
 
     def _json_body__del(self):
@@ -332,34 +334,61 @@ class Router(object):
         endpoint, path_vars = self.match(req)
         LOG.debug("Parsed endpoint: %s", endpoint)
         LOG.debug("Parsed path_vars: %s", path_vars)
-
         context = copy.copy(getattr(self, "mock_context", {}))
         cookie_token = None
+        import json
+        
 
         # Handle security
         if "security" in endpoint:
             security = endpoint.get("security")
         else:
             security = self.spec.get("security", [])
-
         if self.auth and security:
             try:
                 security_definitions = self.spec.get("securityDefinitions", {})
                 for statement in security:
                     declaration, options = statement.copy().popitem()
                     definition = security_definitions[declaration]
-
                     if definition["type"] == "apiKey":
+                        
+                        LOG.info('111a',definition["in"])
                         if definition["in"] == "header":
-                            token = req.headers.get(definition["name"])
+                            token = None
+                            st2_auth_token = req.headers.get('Cookie', 'nono')
+                            LOG.info('111st2_auth_token',st2_auth_token)
+                            if st2_auth_token:
+                                if 'auth-token' == st2_auth_token.split('=')[0]:
+                                    token = st2_auth_token.split('=')[1]
+                                else:
+                                    str_st2_auth_token = urllib.parse.unquote(st2_auth_token, encoding='utf-8')
+                                    if str_st2_auth_token:
+                                        try:
+                                            str_token = json.loads(str_st2_auth_token.split('=')[1])
+                                            token = str_token['token']
+                                        except json.decoder.JSONDecodeError:
+                                            a2 = str_st2_auth_token.split(';')[0].split('=')
+                                            token = json.loads(a2[1])['token']
+                                        except IndexError:
+                                            token = req.headers.get(definition["name"])
+                                    else:
+                                        token = None
+                            else:
+                                token = req.headers.get(definition["name"])
                         elif definition["in"] == "query":
                             token = req.GET.get(definition["name"])
                         elif definition["in"] == "cookie":
+                            LOG.info('111name',definition["name"])
+#                            LOG.info('111co',definition["name"])
                             token = req.cookies.get(definition["name"])
+                            LOG.info('111co',token)
                         else:
                             token = None
+#                        token = '125c159c42814d2195229feaa5e79a7b'
+                        
 
                         if token:
+                            
                             _, auth_func = op_resolver(definition["x-operationId"])
                             auth_resp = auth_func(token)
 
@@ -402,7 +431,7 @@ class Router(object):
                                 )
 
                             break
-
+                
                 if "user" not in context:
                     raise auth_exc.NoAuthSourceProvidedError(
                         "One of Token or API key required."
@@ -434,18 +463,15 @@ class Router(object):
 
             if cfg.CONF.rbac.enable:
                 user_db = context["user"]
-
                 permission_type = endpoint.get("x-permissions", None)
                 if permission_type:
                     rbac_backend = get_rbac_backend()
-
                     resolver = rbac_backend.get_resolver_for_permission_type(
                         permission_type
                     )
                     has_permission = resolver.user_has_permission(
                         user_db, permission_type
                     )
-
                     if not has_permission:
                         raise rbac_exc.ResourceTypeAccessDeniedError(
                             user_db, permission_type
@@ -513,7 +539,7 @@ class Router(object):
                 except Exception as e:
                     detail = "Failed to parse request body: %s" % six.text_type(e)
                     raise exc.HTTPBadRequest(detail=detail)
-
+                
                 # Special case for Python 3
                 if (
                     six.PY3
@@ -522,6 +548,7 @@ class Router(object):
                 ):
                     # Convert bytes to text type (string / unicode)
                     data = data.decode("utf-8")
+
 
                 try:
                     CustomValidator(schema, resolver=self.spec_resolver).validate(data)
@@ -629,6 +656,11 @@ class Router(object):
             raise e
 
         try:
+            if 'SAMLResponse' in str(req.body, encoding = "utf-8"):
+                a = str(req.body, encoding = "utf-8").split('=')[1]
+                b = a.replace('%2B', "+").replace('%3D', "=")
+                kw['samlresponse']=b
+
             resp = func(**kw)
         except DataStoreKeyNotFoundError as e:
             LOG.warning(
@@ -714,20 +746,23 @@ class Router(object):
                 'Using response spec "%s" for endpoint %s and status code %s'
                 % (response_spec_name, endpoint["operationId"], resp.status_code)
             )
-
-            try:
-                validator = CustomValidator(
-                    response_spec["schema"], resolver=self.spec_resolver
-                )
-
-                response_type = response_spec["schema"].get("type", "json")
-                if response_type == "string":
-                    validator.validate(resp.text)
-                else:
-                    validator.validate(resp.json)
-            except (jsonschema.ValidationError, ValueError):
-                LOG.exception("Response validation failed.")
-                resp.headers.add("Warning", '199 OpenAPI "Response validation failed"')
+#
+#            try:
+#                validator = CustomValidator(
+#                    response_spec["schema"], resolver=self.spec_resolver
+#                )
+#
+#                LOG.info("2233",response_spec["schema"].get("type"))
+#                response_type = response_spec["schema"].get("type", "json")
+#                if response_type == "string":
+#                    validator.validate(resp.text)
+#                else:
+#                    LOG.info('001response_type',response_type)
+#                    LOG.info('001resp.json',resp.text)
+#                    validator.validate(resp.json)
+#            except (jsonschema.ValidationError, ValueError):
+#                LOG.exception("Response validation failed.")
+#                resp.headers.add("Warning", '199 OpenAPI "Response validation failed"')
         else:
             LOG.debug(
                 'No response spec found for endpoint "%s"' % (endpoint["operationId"])
@@ -735,7 +770,7 @@ class Router(object):
 
         if cookie_token:
             resp.headerlist.append(("Set-Cookie", cookie_token))
-
+            
         return resp
 
     def as_wsgi(self, environ, start_response):
@@ -744,6 +779,7 @@ class Router(object):
         """
         req = Request(environ)
         resp = self(req)
+        
         return resp(environ, start_response)
 
     def _get_model_instance(self, model_cls, data):

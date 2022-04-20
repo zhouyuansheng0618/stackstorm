@@ -72,6 +72,8 @@ def register_opts(ignore_errors=False):
             "executions. All resources can only be viewed or executed by the owning user "
             "except the admin and system_user who can view or run everything.",
         ),
+        cfg.StrOpt("role", default="observer", help="Default role ."),
+        cfg.StrOpt("adfs", default="https://ifthen-test.lenovo.com/#/history", help="Default saml_url ."),
     ]
 
     do_register_opts(rbac_opts, "rbac", ignore_errors)
