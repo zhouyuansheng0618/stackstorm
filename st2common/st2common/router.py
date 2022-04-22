@@ -657,9 +657,9 @@ class Router(object):
 
         try:
             if 'SAMLResponse' in str(req.body, encoding = "utf-8"):
-                a = str(req.body, encoding = "utf-8").split('=')[1]
-                b = a.replace('%2B', "+").replace('%3D', "=")
-                kw['samlresponse']=b
+                str_saml_response = str(req.body, encoding = "utf-8").split('=')[1]
+                saml_response = str_saml_response.replace('%2B', "+").replace('%3D', "=")
+                kw['samlresponse']=saml_response
 
             resp = func(**kw)
         except DataStoreKeyNotFoundError as e:
