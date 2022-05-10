@@ -1,0 +1,4 @@
+---
+    username: "user4"
+    roles:
+        - "observer"

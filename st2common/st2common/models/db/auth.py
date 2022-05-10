@@ -40,6 +40,11 @@ class UserDB(stormbase.StormFoundationDB):
     """
 
     name = me.StringField(required=True, unique=True)
+    password = me.StringField(required=True, default=False)
+    email = me.StringField(required=True, unique=False)
+    firstname = me.StringField(required=True, unique=False)
+    lastname = me.StringField(required=True, default=False)
+    displayname = me.StringField(required=True, default=False)
     is_service = me.BooleanField(required=True, default=False)
     nicknames = me.DictField(
         required=False, help_text='"Nickname + origin" pairs for ChatOps auth'

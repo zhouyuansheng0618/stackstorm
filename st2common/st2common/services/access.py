@@ -83,7 +83,6 @@ def create_token(
         user=username, token=token, expiry=expiry, metadata=metadata, service=service
     )
     Token.add_or_update(token)
-
     username_string = username if username else "an anonymous user"
     token_expire_string = isotime.format(expiry, offset=False)
     extra = {"username": username, "token_expiration": token_expire_string}

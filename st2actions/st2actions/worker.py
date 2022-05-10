@@ -204,6 +204,7 @@ class ActionExecutionDispatcher(MessageHandler):
 
         extra = {"liveaction_db": liveaction_db}
         try:
+            LOG.info('000000',liveaction_db)
             result = self.container.dispatch(liveaction_db)
             LOG.debug("Runner dispatch produced result: %s", result)
             if not result and not liveaction_db.action_is_workflow:
@@ -251,6 +252,7 @@ class ActionExecutionDispatcher(MessageHandler):
         )
 
         try:
+            LOG.info('111111',liveaction_db)
             result = self.container.dispatch(liveaction_db)
             LOG.debug("Runner dispatch produced result: %s", result)
         except:
@@ -281,6 +283,7 @@ class ActionExecutionDispatcher(MessageHandler):
         )
 
         try:
+            LOG.info('222222',liveaction_db)
             result = self.container.dispatch(liveaction_db)
             LOG.debug("Runner dispatch produced result: %s", result)
         except:
@@ -310,6 +313,7 @@ class ActionExecutionDispatcher(MessageHandler):
         )
 
         try:
+            LOG.info('333333',liveaction_db)
             result = self.container.dispatch(liveaction_db)
             LOG.debug("Runner dispatch produced result: %s", result)
         except:

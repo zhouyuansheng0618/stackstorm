@@ -329,6 +329,7 @@ class ActionExecutionChildrenController(BaseActionExecutionNestedController):
             permission_type=PermissionType.EXECUTION_VIEW,
         )
         id = str(execution_db.id)
+        
 
         return self._get_children(
             id_=id,
@@ -1049,6 +1050,7 @@ class ActionExecutionsController(
 
         This functionality allows us to implement fast and efficient retrievals in st2web.
         """
+        
         exclude_fields = exclude_fields or []
         include_fields = include_fields or []
 
@@ -1077,6 +1079,7 @@ class ActionExecutionsController(
             only_fields=["id", "result_size"],
         )
 
+
         # if result is empty, this means that execution either doesn't exist or the result is
         # larger than threshold which means we don't want to retrieve and return result to
         # the end user to we set exclude_fields accordingly
@@ -1100,6 +1103,7 @@ class ActionExecutionsController(
             exclude_fields=exclude_fields,
             include_fields=include_fields,
         )
+        LOG.info('111111b',execution_db)
         return execution_db
 
     def _get_action_executions(
