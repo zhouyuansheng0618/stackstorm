@@ -32,8 +32,8 @@ import json
 import base64
 import random
 from xml.dom.expatbuilder import parseString
-from st2common.models.db.auth import UserDB
-from st2common.persistence.auth import User
+from st2common.models.db.auth import UserDB, TokenDB
+from st2common.util import date as date_utils
 
 HANDLER_MAPPINGS = {
     "proxy": handlers.ProxyAuthHandler,
@@ -48,11 +48,10 @@ def _create_user(username, password, email, firstname, lastname, displayname):
     user_db = UserDB(name=username, password=password, email=email, firstname=firstname, lastname=lastname,
                      displayname=displayname)
     user_db.save()
-#    User.add_or_update(user_db)
 
 
 class TokenValidationController(object):
-    def get(self, request):
+    def post(self, request):
         token = getattr(request, "token", None)
 
         if not token:
@@ -79,6 +78,7 @@ class TokenController(object):
             raise ParamException("%s is not a valid auth mode" % cfg.CONF.auth.mode)
 
     def post(self, request, **kwargs):
+
         headers = {}
         if "x-forwarded-for" in kwargs:
             headers["x-forwarded-for"] = kwargs.pop("x-forwarded-for")
@@ -89,12 +89,9 @@ class TokenController(object):
 
         if samlresponse:
             userinfo = parse_saml_response(samlresponse)
-
             username = userinfo['itcode']
             # 判断用户是否存在 用户不存在创建用户
             user_info = UserDB.objects(name=username)
-            
-#            user_info = User.get_by_name(username)
             if len(user_info) == 0:
                 password = ''.join(
                     random.sample('1235689abcdefghijklmnopqrstuvwxyz!@#$%^&*()',
@@ -104,16 +101,32 @@ class TokenController(object):
                              displayname=userinfo['displayname'])
                 from st2common.persistence.rbac import UserRoleAssignment
                 from st2common.models.db.rbac import UserRoleAssignmentDB
-                default_role = cfg.CONF.rbac.role
+                role = cfg.CONF.rbac.role
                 role_assignment_db = UserRoleAssignmentDB(
                     user=username,
-                    role=default_role,
+                    role=role,
                     source='',
                     description='',
                     is_remote=False,
                 )
-
                 UserRoleAssignment.add_or_update(role_assignment_db)
+            token_ = TokenDB.objects(user=username).order_by('-expiry').first()
+            if token_:
+                if token_.expiry <= date_utils.get_datetime_utc_now():
+                    st2_auth_token_create_request = {
+                        "user": username,
+                        "ttl": None,
+                    }
+                    adfs_url = cfg.CONF.rbac.adfs
+                    token = self.st2_auth_handler.handle_auth(
+                        request=st2_auth_token_create_request,
+                        remote_addr=adfs_url,
+                        remote_user=username,
+                        headers={},
+                    )
+                    return process_successful_authn_response2(referer=adfs_url, token=token)
+                adfs_url = cfg.CONF.rbac.adfs
+                return process_successful_authn_response(referer=adfs_url, token=token_)
             st2_auth_token_create_request = {
                 "user": username,
                 "ttl": None,
@@ -128,15 +141,15 @@ class TokenController(object):
             return process_successful_authn_response(referer=adfs_url, token=token)
         if authorization:
             authorization = tuple(authorization.split(" "))
-            token = self.handler.handle_auth(
-                request=request,
-                headers=headers,
-                remote_addr=kwargs.pop("remote_addr", None),
-                remote_user=kwargs.pop("remote_user", None),
-                authorization=authorization,
-                **kwargs,
-            )
-            return process_successful_response(token=token)
+        token = self.handler.handle_auth(
+            request=request,
+            headers=headers,
+            remote_addr=kwargs.pop("remote_addr", None),
+            remote_user=kwargs.pop("remote_user", None),
+            authorization=authorization,
+            **kwargs,
+        )
+        return process_successful_response(token=token)
 
 
 CALLBACK_SUCCESS_RESPONSE_BODY = """
@@ -155,6 +168,44 @@ CALLBACK_SUCCESS_RESPONSE_BODY = """
 
 </html>
 """
+
+
+def process_successful_authn_response2(referer, token):
+    token_json = {
+        "id": str(token.id),
+        "user": token.user,
+        "token": token.token,
+        "expiry": str(token.expiry),
+        "service": False,
+        "metadata": {},
+    }
+    CALLBACK_SUCCESS_RESPONSE_BODY2 = """
+    <html>
+        <script>
+            localstore.clear();
+            function getCookie(name) {
+                var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+                return v ? v[2] : null;
+            }
+            data = JSON.parse(window.localStorage.getItem('st2Session'));
+            data['token'] = JSON.parse(decodeURIComponent(getCookie('st2-auth-token')));
+            window.localStorage.setItem('st2Session', JSON.stringify(data));
+            var replace_url = "%s";
+            window.location.replace(replace_url);
+        </script>
+    </html>
+    """
+    body = CALLBACK_SUCCESS_RESPONSE_BODY2 % referer
+    resp = router.Response(body=body)
+    resp.headers["Content-Type"] = "text/html"
+    resp.set_cookie(
+        "st2-auth-token",
+        value=urllib.parse.quote(json.dumps(token_json)),
+        expires=datetime.timedelta(seconds=60),
+        overwrite=True,
+    )
+
+    return resp
 
 
 def process_successful_authn_response(referer, token):
