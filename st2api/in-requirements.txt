@@ -1,0 +1,13 @@
+# Remember to list implicit packages here, otherwise version won't be fixated!
+eventlet
+jsonschema
+kombu
+mongoengine
+pymongo
+oslo.config
+oslo.utils
+pyparsing
+pymongo
+six
+gunicorn
+simplejson

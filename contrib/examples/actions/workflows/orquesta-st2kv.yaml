@@ -1,0 +1,16 @@
+version: 1.0
+
+description: A sample workflow that demonstrates st2kv usage.
+
+input:
+  - key_name
+  - decrypt
+
+output:
+  - value: <% task(task1).result.stdout %>
+
+tasks:
+  task1:
+    action: core.local
+    input:
+      cmd: "echo <% st2kv(ctx().key_name, decrypt => ctx().decrypt) %>"

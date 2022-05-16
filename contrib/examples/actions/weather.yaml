@@ -1,0 +1,33 @@
+---
+description: Look up weather via http://openweathermap.org
+# Free weather API is provided under the terms of the Creative Commons Attribution-ShareAlike 4.0 Generic License.
+# Terms of service http://openweathermap.org/terms
+enabled: true
+entry_point: ''
+name: weather
+parameters:
+  auth:
+    type: string
+  headers:
+    type: object
+  method:
+    default: GET
+    type: string
+    enum:
+    - GET
+    - POST
+    - PUT
+    - DELETE
+    immutable: true
+  params:
+    type: string
+  timeout:
+    default: 60
+    type: integer
+  url:
+    default: http://api.openweathermap.org/data/2.5/weather?q={{zip}}&units=imperial
+    immutable: true
+    type: string
+  zip:
+    type: string
+runner_type: "http-request"

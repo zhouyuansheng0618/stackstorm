@@ -1,0 +1,20 @@
+# Remember to list implicit packages here, otherwise version won't be fixated!
+importlib-metadata
+argcomplete
+prettytable
+pytz
+python-dateutil
+pyyaml
+jsonschema
+jsonpath-rw
+requests
+six
+sseclient-py
+python-editor
+prompt-toolkit
+# mention cffi used by cryptography so we can control version
+cffi
+cryptography
+orjson
+# needed by requests
+chardet

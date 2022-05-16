@@ -1,0 +1,71 @@
+- description: HTTP client for running HTTP actions.
+  enabled: true
+  name: http-request
+  runner_module: http_runner
+  runner_parameters:
+    allow_redirects:
+      default: false
+      description: Set to True if POST/PUT/DELETE redirect following is allowed.
+      type: boolean
+    cookies:
+      description: Optional cookies to send with the request.
+      type: object
+    headers:
+      description: HTTP headers for the request.
+      type: object
+    http_proxy:
+      description: URL of HTTP proxy to use (e.g. http://10.10.1.10:3128).
+      type: string
+    https_proxy:
+      description: URL of HTTPS proxy to use (e.g. http://10.10.1.10:3128).
+      type: string
+    password:
+      description: Password required by basic authentication.
+      type: string
+      secret: true
+    url:
+      description: URL to the HTTP endpoint.
+      required: true
+      type: string
+    username:
+      description: Username required by basic authentication.
+      type: string
+    verify_ssl_cert:
+      default: true
+      description: Certificate for HTTPS request is verified by default using requests
+        CA bundle which comes from Mozilla. Verification using a custom CA bundle
+        is not yet supported. Set to False to skip verification.
+      type: boolean
+    url_hosts_blacklist:
+      description: Optional list of hosts (network locations) to blacklist (e.g. example.com,
+        127.0.0.1, ::1, etc.). If action will try to access that endpoint, an exception will be
+        thrown and action will be marked as failed.
+      required: false
+      type: array
+      items:
+        type: string
+    url_hosts_whitelist:
+      description: Optional list of hosts (network locations) to whitelist (e.g. example.com,
+        127.0.0.1, ::1, etc.). If specified, actions will only be able to hit hosts on this
+        whitelist.
+      required: false
+      type: array
+      items:
+        type: string
+  output_key: body
+  output_schema:
+    status_code:
+      type: integer
+    body:
+      anyOf:
+        - type: "object"
+        - type: "string"
+        - type: "integer"
+        - type: "number"
+        - type: "boolean"
+        - type: "array"
+        - type: "null"
+    parsed:
+      type: boolean
+    headers:
+      type: object

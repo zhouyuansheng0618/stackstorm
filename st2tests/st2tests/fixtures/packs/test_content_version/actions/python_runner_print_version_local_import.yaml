@@ -1,0 +1,7 @@
+---
+"name": "python_runner_print_version_local_import"
+"runner_type": "python-script"
+"description": "Action which prints pack version."
+"enabled": true
+"entry_point": "print_version_local_import.py"
+"parameters": {}

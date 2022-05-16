@@ -1,0 +1,23 @@
+---
+name: "example_pack_owner"
+description: "Owner of pack example"
+enabled: true
+permission_grants:
+    -
+        resource_uid: "pack:csv"
+        permission_types:
+           - "pack_all"
+           - "sensor_type_all"
+           - "rule_all"
+           - "action_all"
+    # Note: To be able to create a rule, the user also needs to have an "action_execute" permission
+    # on the action used inside the rule. In this example, the rule created calls core.local action
+    -
+        resource_uid: "action:core:local"
+        permission_types:
+           - "action_execute"
+    # Need runner_type_list on relevant runners
+    -
+        resource_uid: "runner_type:local-shell-cmd"
+        permission_types:
+           - "runner_type_list"

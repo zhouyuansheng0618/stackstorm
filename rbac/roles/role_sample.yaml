@@ -1,0 +1,2201 @@
+---
+name: "sample"
+description: "Role which contains many different permission grants and serves for demonstration purposes"
+enabled: true
+permission_grants:     
+    -
+        resource_uid: "pack:example"
+        permission_types:
+           - "pack_list"
+           - "pack_view"
+           - "pack_create"
+           - "pack_modify"
+           - "pack_install"
+           - "pack_uninstall"
+           - "pack_register"
+           - "pack_config"
+           - "pack_search"           
+           - "pack_views_index_health"
+           - "sensor_type_all"
+           - "sensor_type_view"
+           - "action_view"          
+           - "action_create"
+           - "action_modify"
+           - "action_execute"           
+           - "action_alias_view"
+           - "action_alias_create"
+           - "action_alias_modify"
+           - "rule_view"  
+           - "rule_create"           
+           - "rule_modify"
+
+
+    -
+        resource_uid: "action:packs:install"
+        permission_types:
+        - "action_execute"
+
+    -
+        resource_uid: "sensor_type:example"
+        permission_types:
+           - "sensor_type_list"
+           - "sensor_type_view"
+           - "sensor_type_modify"
+           - "sensor_type_all"
+    -
+        resource_uid: "action:example"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+
+
+    -
+        resource_uid: "action_alias:example"
+        permission_types:
+           - "action_alias_list"
+           - "action_alias_view"
+           - "action_alias_create"
+           - "action_alias_modify"
+           - "action_alias_match"
+           - "action_alias_help"
+
+    -
+        resource_uid: "api_key:example"
+        permission_types:
+           - "api_key_list"
+           - "api_key_view"
+           - "api_key_create"
+           - "api_key_modify"
+           - "api_key_all"
+
+    -
+        resource_uid: "key_value_pair:example"
+        permission_types:
+           - "key_value_pair_list"
+           - "key_value_pair_view"
+           - "key_value_pair_set"
+
+
+           
+    -
+        resource_uid: "rule:example"
+        permission_types:
+           - "rule_list"
+           - "rule_view"
+           - "rule_create"
+           - "rule_modify"
+
+
+    -
+        resource_uid: "runner_type:example"
+        permission_types:
+           - "runner_type_list"
+           - "runner_type_view"
+           - "runner_type_modify"
+
+
+    -
+        resource_uid: "execution:example"
+        permission_types:
+           - "execution_views_filters_list"
+           - "execution_list"
+           - "execution_view"
+           - "execution_rerun"
+           - "execution_stop"
+
+
+           
+    -
+        resource_uid: "trigger:example"
+        permission_types:
+           - "trigger_all"
+
+
+  
+
+
+
+    -
+        resource_uid: "webhook:example"
+        permission_types:
+           - "webhook_list"
+           - "webhook_view"
+           - "webhook_create"
+           - "webhook_send"
+
+    -
+        resource_uid: "trace:example"
+        permission_types:
+           - "trace_all"
+
+    -
+        resource_uid: "action:activecampaign:account_view"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+
+
+    -
+        resource_uid: "action:activecampaign:automation_contact_add"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+    -
+        resource_uid: "action:activecampaign:automation_contact_list"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+    -
+        resource_uid: "action:activecampaign:automation_contact_view"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+    -
+        resource_uid: "action:activecampaign:automation_list"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+
+    -
+        resource_uid: "action:activecampaign:branding_edit"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:activecampaign:branding_view"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:activecampaign:campaign_create"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:activecampaign:campaign_list"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:activecampaign:campaign_paginator"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:activecampaign:campaign_report_bounce_list"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:activecampaign:campaign_report_bounce_totals"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:activecampaign:campaign_report_forward_list"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+
+    -
+        resource_uid: "action:activecampaign:campaign_report_forward_totals"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:activecampaign:campaign_report_link_list"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:activecampaign:campaign_report_link_totals"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+    -
+        resource_uid: "action:activecampaign:campaign_report_open_list"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:activecampaign:campaign_report_open_totals"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:activecampaign:campaign_report_totals"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+    -
+        resource_uid: "action:activecampaign:campaign_report_unopen_list"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:activecampaign:campaign_report_unsubscription_list"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:activecampaign:campaign_report_unsubscription_totals"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+    -
+        resource_uid: "action:activecampaign:campaign_send"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:activecampaign:campaign_status"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:activecampaign:contact_add"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+    -
+        resource_uid: "action:activecampaign:contact_automation_list"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+    -
+        resource_uid: "action:activecampaign:contact_edit"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:activecampaign:contact_list"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+    -
+        resource_uid: "action:activecampaign:contact_note_add"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+    -
+        resource_uid: "action:activecampaign:contact_note_edit"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+    -
+        resource_uid: "action:activecampaign:contact_paginator"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:activecampaign:contact_sync"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+    -
+        resource_uid: "action:activecampaign:contact_tag_add"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+
+    -
+        resource_uid: "action:activecampaign:contact_view"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+    -
+        resource_uid: "action:activecampaign:contact_view_email"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:activecampaign:contact_view_hash"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+    -
+        resource_uid: "action:activecampaign:deal_add"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+    -
+        resource_uid: "action:activecampaign:deal_edit"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+    -
+        resource_uid: "action:activecampaign:deal_get"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:activecampaign:deal_list"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+    -
+        resource_uid: "action:activecampaign:deal_note_add"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"       
+    -
+        resource_uid: "action:activecampaign:deal_note_edit"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"     
+
+    -
+        resource_uid: "action:activecampaign:deal_pipeline_add"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"       
+    -
+        resource_uid: "action:activecampaign:deal_pipeline_edit"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activecampaign:deal_pipeline_list"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"       
+    -
+        resource_uid: "action:activecampaign:deal_stage_add"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"     
+
+    -
+        resource_uid: "action:activecampaign:deal_stage_edit"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"       
+    -
+        resource_uid: "action:activecampaign:deal_stage_list"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+
+    -
+        resource_uid: "action:activecampaign:deal_task_add"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"       
+    -
+        resource_uid: "action:activecampaign:deal_task_edit"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"     
+
+    -
+        resource_uid: "action:activecampaign:deal_tasktype_add"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"       
+    -
+        resource_uid: "action:activecampaign:deal_tasktype_edit"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activecampaign:form_getforms"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"       
+    -
+        resource_uid: "action:activecampaign:form_html"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"     
+
+    -
+        resource_uid: "action:activecampaign:group_add"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"       
+    -
+        resource_uid: "action:activecampaign:group_delete_list"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+
+
+    -
+        resource_uid: "action:activecampaign:group_edit"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"       
+    -
+        resource_uid: "action:activecampaign:group_list"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"     
+
+    -
+        resource_uid: "action:activecampaign:group_view"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"       
+    -
+        resource_uid: "action:activecampaign:list_add"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activecampaign:list_edit"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"       
+    -
+        resource_uid: "action:activecampaign:list_field_add"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"     
+
+    -
+        resource_uid: "action:activecampaign:list_field_edit"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"       
+    -
+        resource_uid: "action:activecampaign:list_field_view"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+
+    -
+        resource_uid: "action:activecampaign:list_list"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"       
+    -
+        resource_uid: "action:activecampaign:list_paginato"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"     
+
+    -
+        resource_uid: "action:activecampaign:list_view"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"       
+    -
+        resource_uid: "action:activecampaign:message_add"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activecampaign:message_edit"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"       
+    -
+        resource_uid: "action:activecampaign:message_list"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"     
+
+    -
+        resource_uid: "action:activecampaign:message_template_add"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"       
+    -
+        resource_uid: "action:activecampaign:message_template_edit"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+
+
+    -
+        resource_uid: "action:activecampaign:message_template_export"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+
+    -
+        resource_uid: "action:activecampaign:message_template_import"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activecampaign:message_template_list"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+
+    -
+        resource_uid: "action:activecampaign:message_template_view"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+
+    -
+        resource_uid: "action:activecampaign:message_view"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+
+    -
+        resource_uid: "action:activecampaign:organization_list"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activecampaign:settings_edit"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+
+    -
+        resource_uid: "action:activecampaign:singlesignon"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activecampaign:track_event_add"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+
+    -
+        resource_uid: "action:activecampaign:track_event_list"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activecampaign:track_event_status_edit"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+
+    -
+        resource_uid: "action:activecampaign:track_site_list"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+
+    -
+        resource_uid: "action:activecampaign:track_site_status_edit"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+
+    -
+        resource_uid: "action:activecampaign:track_site_whitelist_add"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activecampaign:user_add"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+
+    -
+        resource_uid: "action:activecampaign:user_edit"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+
+    -
+        resource_uid: "action:activecampaign:user_list"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+
+    -
+        resource_uid: "action:activecampaign:user_me"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activecampaign:user_view"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+
+    -
+        resource_uid: "action:activecampaign:user_view_email"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+
+    -
+        resource_uid: "action:activecampaign:user_view_username"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+
+    -
+        resource_uid: "action:activecampaign:webhook_add"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activecampaign:webhook_edit"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+
+    -
+        resource_uid: "action:activecampaign:webhook_events"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activecampaign:webhook_list"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+
+    -
+        resource_uid: "action:activecampaign:webhook_view"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:add_ad_computer_service_account"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+
+    -
+        resource_uid: "action:activedirectory:add_ad_domain_controller_password_replication_policy"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+
+    -
+        resource_uid: "action:activedirectory:add_ad_fine_grained_password_policy_subject"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+
+    -
+        resource_uid: "action:activedirectory:add_ad_group_member"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:add_ad_principal_group_membership"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+
+    -
+        resource_uid: "action:activedirectory:clear_ad_account_expiration"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:disable_ad_account"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:disable_ad_optional_feature"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:enable_ad_account"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:enable_ad_optional_feature"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:get_ad_account_authorization_group"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:get_ad_account_resultant_password_replication_policy"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:get_ad_computer"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:get_ad_computer_service_account"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:get_ad_default_domain_password_policy"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:get_ad_domain"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:get_ad_domain_controller"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:get_ad_domain_controller_password_replication_policy"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:get_ad_domain_controller_password_replication_policy_usage"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:get_ad_fine_grained_password_policy"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:get_ad_fine_grained_password_policy_subject"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+
+
+
+    -
+        resource_uid: "action:activedirectory:get_ad_forest"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:get_ad_group"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:get_ad_group_member"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:get_ad_object"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:get_ad_optional_feature"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:get_ad_organizational_unit"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:get_ad_principal_group_membership"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:get_ad_root_dse"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:get_ad_service_account"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:get_ad_user"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:get_ad_user_resultant_password_policy"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:install_ad_service_account"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:install_rsat_ad_powershell"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:move_ad_directory_server"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:move_ad_directory_server_operation_master_role"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:move_ad_object"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:new_ad_computer"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:new_ad_fine_grained_password_policy"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:new_ad_group"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:new_ad_object"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:new_ad_organizational_unit"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:new_ad_service_account"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:new_ad_user"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"   
+
+    -
+        resource_uid: "action:activedirectory:remove_ad_computer"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:remove_ad_computer_service_account"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:remove_ad_domain_controller_password_replication_policy"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:remove_ad_fine_grained_password_policy"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:remove_ad_fine_grained_password_policy_subject"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:remove_ad_group"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:remove_ad_group_member"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:remove_ad_object"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"   
+
+    -
+        resource_uid: "action:activedirectory:remove_ad_organizational_unit"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:remove_ad_principal_group_membership"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:remove_ad_service_account"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:remove_ad_user"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:rename_ad_object"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:reset_ad_service_account_password"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:restore_ad_object"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:search_ad_account"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"   
+
+    -
+        resource_uid: "action:activedirectory:set_ad_account_control"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:set_ad_account_expiration"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:set_ad_account_password"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:set_ad_computer"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:set_ad_default_domain_password_policy"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:set_ad_domain"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:set_ad_domain_mode"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"    
+    -
+        resource_uid: "action:activedirectory:set_ad_fine_grained_password_policy"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+
+    -
+        resource_uid: "action:activedirectory:set_ad_forest"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+
+    -
+        resource_uid: "action:activedirectory:set_ad_forest_mode"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:activedirectory:set_ad_group"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+
+    -
+        resource_uid: "action:activedirectory:set_ad_object"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:activedirectory:set_ad_organizational_unit"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+
+    -
+        resource_uid: "action:activedirectory:set_ad_service_account"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:activedirectory:set_ad_user"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+
+    -
+        resource_uid: "action:activedirectory:uninstall_ad_service_account"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+
+    -
+        resource_uid: "action:activedirectory:unlock_ad_account"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+
+ 
+    -
+        resource_uid: "action:chatops:format_execution_result"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+
+    -
+        resource_uid: "action:chatops:match"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:chatops:match_and_execute"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:chatops:post_message"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:chatops:post_result"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+
+    -
+        resource_uid: "action:chatops:run"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+
+
+    -
+        resource_uid: "action:circle_ci:cancel_build"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+
+    -
+        resource_uid: "action:circle_ci:get_build_info"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:circle_ci:get_build_number"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:circle_ci:list_pipelines"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+
+    -
+        resource_uid: "action:circle_ci:retry_build"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:circle_ci:run_build"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:circle_ci:run_project_build"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+
+    -
+        resource_uid: "action:circle_ci:wait_until_build_finishes"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:circle_ci:wait_until_pipeline_finishes"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:cloudshark:upload"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:core:announcement"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:core:ask"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:core:echo"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:core:error"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:core:http"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:core:inject_trigger"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:core:local"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:core:local_sudo"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+
+    -
+        resource_uid: "action:core:noop"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:core:pause"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:core:remote"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:core:remote_sudo"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:core:sendmail"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:core:uuid"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+        resource_uid: "action:core:winrm_cmd"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:core:winrm_ps_cmd"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"   
+    -
+        resource_uid: "action:linux:check_loadavg"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:linux:check_processes"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:linux:cp"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:linux:diag_loadavg"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:linux:dig"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:linux:file_touch"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:linux:lsof"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:linux:lsof_pids"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+
+    -
+        resource_uid: "action:linux:mv"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:linux:netstat"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:linux:netstat_grep"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:linux:pkill"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:linux:rm"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:linux:rsync"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:linux:scp"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:linux:service"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+    -
+        resource_uid: "action:linux:traceroute"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:linux:vmstat"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"  
+    -
+        resource_uid: "action:linux:wait_for_ssh"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+    -
+        resource_uid: "action:packs:delete"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:packs:download"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:packs:get"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:packs:get_config"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:packs:get_pack_dependencies"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:packs:get_pack_warnings"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:packs:install"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:packs:load"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+    -
+        resource_uid: "action:packs:restart_component"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:packs:search"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:packs:setup_virtualenv"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:packs:show"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:packs:uninstall"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:packs:unload"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:packs:update_virtualenv"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:packs:virtualenv_prerun"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+    -
+        resource_uid: "action:splunk:get_user"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+    -
+        resource_uid: "action:splunk:search"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+    -
+        resource_uid: "action:splunk:sendlog"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
+
+
+    -
+        resource_uid: "action:default:test1"
+        permission_types:
+           - "action_list"
+           - "action_view"
+           - "action_create"
+           - "action_modify"
+           - "action_execute"
