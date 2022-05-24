@@ -1,0 +1,15 @@
+MANIFEST.in
+dist_utils.py
+requirements.txt
+runner.yaml
+setup.py
+local_runner/__init__.py
+local_runner/base.py
+local_runner/local_shell_command_runner.py
+local_runner/local_shell_script_runner.py
+stackstorm_runner_local.egg-info/PKG-INFO
+stackstorm_runner_local.egg-info/SOURCES.txt
+stackstorm_runner_local.egg-info/dependency_links.txt
+stackstorm_runner_local.egg-info/entry_points.txt
+stackstorm_runner_local.egg-info/not-zip-safe
+stackstorm_runner_local.egg-info/top_level.txt

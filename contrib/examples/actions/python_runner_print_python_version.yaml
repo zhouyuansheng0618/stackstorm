@@ -1,0 +1,7 @@
+---
+name: python_runner_print_python_version
+runner_type: python-script
+description: Action which prints version of Python executable which is used.
+enabled: true
+entry_point: pythonactions/print_python_version.py
+parameters: {}

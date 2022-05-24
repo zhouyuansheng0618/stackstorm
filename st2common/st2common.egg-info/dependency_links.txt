@@ -1,0 +1,2 @@
+git+https://github.com/StackStorm/orquesta.git@v1.5.0#egg=orquesta
+git+https://github.com/StackStorm/st2-rbac-backend.git@v3.7#egg=st2-rbac-backend

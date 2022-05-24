@@ -1,0 +1,2 @@
+git+https://github.com/StackStorm/st2-auth-backend-flat-file.git@master#egg=st2-auth-backend-flat-file
+git+https://github.com/StackStorm/st2-auth-ldap.git@v3.7#egg=st2-auth-ldap

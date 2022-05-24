@@ -1,0 +1,3 @@
+[st2common.runners.runner]
+http-request = http_runner.http_runner
+

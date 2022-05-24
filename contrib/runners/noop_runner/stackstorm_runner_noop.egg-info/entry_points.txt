@@ -1,0 +1,3 @@
+[st2common.runners.runner]
+noop = noop_runner.noop_runner
+

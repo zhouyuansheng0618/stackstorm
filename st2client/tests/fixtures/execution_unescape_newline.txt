@@ -1,0 +1,18 @@
+id: 547e19561e2e2417d3dde123
+action.ref: core.stacktrace
+context.user: stanley
+parameters: None
+status: succeeded (1s elapsed)
+start_timestamp: Tue, 02 Dec 2014 19:56:06 UTC
+end_timestamp: Tue, 02 Dec 2014 19:56:07 UTC
+log: None
+result: 
+  localhost:
+    failed: false
+    return_code: 0
+    stderr: "FOOBAR1
+Traceback (most recent call last):
+ "
+    stdout: 'FOOBAR2
+      '
+    succeeded: true

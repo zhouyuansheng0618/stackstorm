@@ -1,0 +1,55 @@
+# Remember to list implicit packages here, otherwise version won't be fixated!
+apscheduler
+dnspython
+python-dateutil
+eventlet
+# used by eventlet
+greenlet
+jinja2
+jsonschema
+kombu
+#Used by jinja2
+MarkupSafe
+mongoengine
+networkx
+# used by networkx
+decorator
+git+https://github.com/StackStorm/orquesta.git@v1.5.0#egg=orquesta
+git+https://github.com/StackStorm/st2-rbac-backend.git@v3.7#egg=st2-rbac-backend
+oslo.config
+paramiko
+pyyaml
+pymongo
+# used for optional network level compression for mongodb
+zstandard
+# mention cffi used by cryptography so we can control version
+cffi
+cryptography
+requests
+retrying
+semver
+six
+tenacity
+tooz
+# Required by tooz - on new versions of tooz, all the backend dependencies need
+# to be installed manually
+zake
+# default coordinator backend configured for tooz
+redis
+routes
+flex
+webob
+jsonpath-rw
+pyOpenSSL
+python-statsd
+udatetime
+orjson
+# Note: amqp is used by kombu, this needs to be added here to be picked up by
+# requirements fixate script.
+amqp
+# Used by st2-pack-* commands
+gitpython
+gitdb
+lockfile
+# needed by requests
+chardet

@@ -1,0 +1,65 @@
+*.py[cod]
+*.sqlite
+*.log
+.stamp*
+
+# C extensions
+*.so
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+.venv
+eggs
+parts
+#bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib64
+virtualenv
+virtualenv-py3
+virtualenv-osx
+virtualenv-st2client
+virtualenv-st2client-osx
+virtualenv-components
+virtualenv-components-osx
+.venv-st2devbox
+
+# generated travis conf
+conf/st2.travis.conf
+# generated GitHub Actions conf
+conf/st2.githubactions.conf
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.coverage.integration.*
+.coverage.integration
+.coverage.unit.*
+.coverage.unit
+cover
+coverage*.xml
+.tox
+nosetests.xml
+htmlcov
+benchmark_histograms/
+
+# Mr Developer
+.idea
+.DS_Store
+._*
+.vscode
+*.sublime-project
+*.sublime-workspace
+
+# Editor Saves
+*~
+\#*\#
+[._]*.sw[a-p]
+[._]sw[a-p]

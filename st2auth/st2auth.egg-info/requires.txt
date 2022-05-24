@@ -1,0 +1,10 @@
+bcrypt==3.2.0
+eventlet==0.30.2
+st2-auth-backend-flat-file
+st2-auth-ldap
+gunicorn==20.1.0
+oslo.config<1.13,>=1.12.1
+passlib==1.7.4
+pymongo==3.11.3
+six==1.13.0
+stevedore==1.30.1

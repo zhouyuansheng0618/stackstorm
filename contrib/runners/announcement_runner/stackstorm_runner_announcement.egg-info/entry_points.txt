@@ -1,0 +1,3 @@
+[st2common.runners.runner]
+announcement = announcement_runner.announcement_runner
+

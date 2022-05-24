@@ -1,0 +1,3 @@
+[st2common.runners.runner]
+python-script = python_runner.python_runner
+

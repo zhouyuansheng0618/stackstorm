@@ -1,0 +1,8 @@
+[st2common.metrics.driver]
+echo = st2common.metrics.drivers.echo_driver:EchoDriver
+noop = st2common.metrics.drivers.noop_driver:NoopDriver
+statsd = st2common.metrics.drivers.statsd_driver:StatsdDriver
+
+[st2common.rbac.backend]
+noop = st2common.rbac.backends.noop:NoOpRBACBackend
+

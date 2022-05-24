@@ -1,0 +1,3 @@
+[st2auth.sso.backends]
+noop = st2auth.sso.noop:NoOpSingleSignOnBackend
+

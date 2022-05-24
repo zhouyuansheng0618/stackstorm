@@ -1,0 +1,4 @@
+[st2common.runners.runner]
+remote-shell-cmd = remote_runner.remote_command_runner
+remote-shell-script = remote_runner.remote_script_runner
+

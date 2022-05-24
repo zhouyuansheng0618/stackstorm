@@ -1,0 +1,3 @@
+[st2common.runners.runner]
+inquirer = inquirer_runner.inquirer_runner
+
